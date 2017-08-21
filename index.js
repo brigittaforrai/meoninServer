@@ -2,21 +2,17 @@
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
-const aws = require('aws-sdk');
-let config = new aws.S3({
-  pwd: process.env.CGP_1,
-});
+const pwd = process.env.CGP_1;
+const user = process.env.CGU_1;
+
 // var config = JSON.parse(fs.readFileSync("config.json"));
 
 let emailSender = function() {
   let transporter = nodemailer.createTransport({
-      // host: 'smtp.gmail.com',
-      // port: 587,
-      // secure: false, // secure:true for port 465, secure:false for port 587
       service: 'gmail',
       auth: {
-          user: 'forraibrigi@gmail.com',
-          pass: config.pwd
+          user: user,
+          pass: pwd
       },
       tls: {
         rejectUnauthorized: false
@@ -38,7 +34,6 @@ let emailSender = function() {
           return console.log(error);
       }
       console.log('Message %s sent: %s', info.messageId, info.response);
-      console.log(info);
   });
 };
 

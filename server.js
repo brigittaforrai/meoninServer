@@ -3,8 +3,8 @@ var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+let port = process.env.PORT || 8080;
 app.use(bodyParser.json());
-
 var mailSender = require('./index.js');
 
 // app.get('/', function (req, res) {
@@ -13,4 +13,7 @@ var mailSender = require('./index.js');
 // })
 
 mailSender();
-console.log(process.env.CGP_1);
+
+app.listen(port, function() {
+    console.log('app is running');
+});

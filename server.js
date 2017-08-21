@@ -3,7 +3,6 @@ var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-let port = process.env.PORT || 8080;
 app.use(bodyParser.json());
 var mailSender = require('./index.js');
 
@@ -14,6 +13,6 @@ var mailSender = require('./index.js');
 
 mailSender();
 
-app.listen(port, function() {
-    console.log('app is running');
-});
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})

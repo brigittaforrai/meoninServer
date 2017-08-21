@@ -5,8 +5,6 @@ const path = require('path');
 const pwd = process.env.CGP_1;
 const user = process.env.CGU_1;
 
-// var config = JSON.parse(fs.readFileSync("config.json"));
-
 let emailSender = function() {
   let transporter = nodemailer.createTransport({
       service: 'gmail',

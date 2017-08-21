@@ -13,3 +13,4 @@ var mailSender = require('./index.js');
 // })
 
 mailSender();
+console.log(process.env.CGP_1);

@@ -27,8 +27,8 @@ let emailSender = function() {
       sender: 'zsolt.bako@gmail.com',
       // from: '"brigi👻" <zsolt.bako@gmail.com>>', // sender address
       to: 'forraibrigi@gmail.com', // list of receivers
-      subject: 'replyy', // Subject line
-      text: 'na, eddig az uzenet nem ment at :D terminalbol kuldozgetek neked emailt :)', // plain text body
+      subject: 'test', // Subject line
+      text: 'uzenet', // plain text body
       // html: '<b><3</b>'
       replyTo: 'zsolt.bako@gmail.com'
   };

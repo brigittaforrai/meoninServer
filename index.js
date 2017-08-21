@@ -1,37 +1,34 @@
 'use strict';
 const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
+const sgTransport = require('nodemailer-sendgrid-transport');
 const pwd = process.env.CGP_1;
 const user = process.env.CGU_1;
 
 let emailSender = function() {
-  let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-          user: user,
-          pass: pwd
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-  });
-
-  let mailOptions = {
-      sender: 'zsolt.bako@gmail.com',
-      // from: '"brigi👻" <zsolt.bako@gmail.com>>', // sender address
-      to: 'forraibrigi@gmail.com', // list of receivers
-      subject: 'test', // Subject line
-      text: 'uzenet', // plain text body
-      // html: '<b><3</b>'
-      replyTo: 'zsolt.bako@gmail.com'
+  let options = {
+    auth: {
+      api_user: 'brigittaforrai',
+      api_key: 'merlegek_66'
+    }
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-          return console.log(error);
+  let client = nodemailer.createTransport(sgTransport(options));
+
+  var email = {
+    from: 'zsolt.bako@gmail.com',
+    to: 'forraibrigi@gmail.com',
+    subject: 'sendgrid test',
+    text: 'hellohello',
+    html: '<b>Hello bello</b>'
+  };
+
+  client.sendMail(email, function(err, info){
+      if (err ){
+        console.log(err);
       }
-      console.log('Message %s sent: %s', info.messageId, info.response);
+      else {
+        console.log(info);
+      }
   });
 };
 

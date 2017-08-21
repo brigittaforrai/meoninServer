@@ -12,7 +12,7 @@ var mailSender = require('./index.js');
 // })
 
 mailSender();
-
-app.listen(3000, function () {
+let port = process.env.PORT || 5000;
+app.listen(port, function () {
   console.log('Example app listening on port 3000!')
 })

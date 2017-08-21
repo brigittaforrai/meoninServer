@@ -1,0 +1,14 @@
+{
+  "name": "meoninserver",
+  "version": "1.0.0",
+  "description": "meonin server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodemailer"
+  ],
+  "author": "brigittaforrai",
+  "license": "ISC"
+}

@@ -10,5 +10,8 @@
     "nodemailer"
   ],
   "author": "brigittaforrai",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^4.0.1"
+  }
 }

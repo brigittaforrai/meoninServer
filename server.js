@@ -6,12 +6,16 @@ var app = express();
 app.use(bodyParser.json());
 var mailSender = require('./mail.js');
 
-app.get('https://hidden-earth-71841.herokuapp.com/', function (req, res) {
+app.use(express.static(__dirname + '/static'));
+
+app.get('/', function (req, res) {
   // var email = req.body.email;
+  console.log('get');
   mailSender();
   res.send('message sent')
 })
 
+mailSender();
 
 let port = process.env.PORT || 5000;
 app.listen(port, function () {

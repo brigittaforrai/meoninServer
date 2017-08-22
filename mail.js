@@ -7,8 +7,8 @@ const user = process.env.CGU_1;
 let emailSender = function() {
   let options = {
     auth: {
-      api_user: 'brigittaforrai',
-      api_key: 'merlegek_66'
+      api_user: 'user',
+      api_key: 'pwd'
     }
   };
 

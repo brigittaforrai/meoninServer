@@ -27,6 +27,7 @@ let emailSender = function() {
         console.log(err);
       }
       else {
+        console.log('mail');
         console.log(info);
       }
   });

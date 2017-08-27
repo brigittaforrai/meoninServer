@@ -5,6 +5,7 @@ const pwd = process.env.CGP_1;
 const user = process.env.CGU_1;
 
 let emailSender = function() {
+  console.log('email');
   let options = {
     auth: {
       api_user: 'user',
@@ -18,8 +19,8 @@ let emailSender = function() {
     from: 'zsolt.bako@gmail.com',
     to: 'forraibrigi@gmail.com',
     subject: 'sendgrid test',
-    text: 'hellohello',
-    html: '<b>Hello bello</b>'
+    // text: 'lefut',
+    html: '<b>lefut</b>'
   };
 
   client.sendMail(email, function(err, info){

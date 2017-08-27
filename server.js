@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors())
 app.use(express.static(__dirname + '/static'));
 
-app.get('/', function (req, res) {
+app.post('/', function (req, res) {
   // var email = req.body.email;
   console.log('get');
   mailSender();

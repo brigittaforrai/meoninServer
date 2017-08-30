@@ -17,8 +17,8 @@ let emailSender = function(from,  message) {
     from: from,
     to: 'forraibrigi@gmail.com',
     subject: 'message from meonin website',
-    text: message,
-    // html: '<b>lefut</b>'
+    // text: message,
+    html: '<p>' + message + '</p>'
   };
 
   client.sendMail(email, (err, info) => {

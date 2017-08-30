@@ -8,13 +8,17 @@ let mailSender = require('./mail.js');
 
 app.use(bodyParser.json());
 app.use(cors())
-// app.use(express.static(__dirname + '/static'));
 
 app.post('/', function (req, res) {
+  console.log(req.body, 'req');
   var message = req.body.message;
   var sender = req.body.sender;
-  mailSender('cica@gmail.com', 'szia brigi, cica vagyok');
+  mailSender(sender, message);
   res.send('message sent');
+});
+
+app.get('/', function (req, res) {
+  res.send('ok');
 });
 
 let port = process.env.PORT || 5000;

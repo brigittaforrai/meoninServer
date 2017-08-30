@@ -8,12 +8,12 @@ let mailSender = require('./mail.js');
 
 app.use(bodyParser.json());
 app.use(cors())
-app.use(express.static(__dirname + '/static'));
+// app.use(express.static(__dirname + '/static'));
 
 app.post('/', function (req, res) {
-  // var email = req.body.email;
-  console.log('get');
-  mailSender();
+  var message = req.body.message;
+  var sender = req.body.sender;
+  mailSender('cica@gmail.com', 'szia brigi, cica vagyok');
   res.send('message sent');
 });
 

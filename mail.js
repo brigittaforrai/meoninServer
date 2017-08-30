@@ -4,33 +4,29 @@ const sgTransport = require('nodemailer-sendgrid-transport');
 const pwd = process.env.CGP_1;
 const user = process.env.CGU_1;
 
-let emailSender = function() {
-  console.log('email');
+let emailSender = function(from,  message) {
   let options = {
     auth: {
-      api_user: 'user',
-      api_key: 'pwd'
+      api_user: user,
+      api_key: pwd
     }
   };
-
   let client = nodemailer.createTransport(sgTransport(options));
 
   var email = {
-    from: 'zsolt.bako@gmail.com',
+    from: from,
     to: 'forraibrigi@gmail.com',
-    subject: 'sendgrid test',
-    // text: 'lefut',
-    html: '<b>lefut</b>'
+    subject: 'message from meonin website',
+    text: message,
+    // html: '<b>lefut</b>'
   };
 
-  client.sendMail(email, function(err, info){
-      if (err ){
-        console.log(err);
-      }
-      else {
-        console.log('mail');
-        console.log(info);
-      }
+  client.sendMail(email, (err, info) => {
+    if(err){
+      console.log(err);
+    } else {
+      console.log(info);
+    }
   });
 };
 
